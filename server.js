@@ -13,7 +13,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//hello
+//hel
 // DB Config
 const db = require('./config/keys').mongoURI;
 
