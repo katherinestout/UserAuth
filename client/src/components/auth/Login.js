@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Form extends Component {
+class Login extends Component {
 
     constructor () {
       super();
@@ -18,7 +18,9 @@ class Form extends Component {
 
       // check it out: we get the evt.target.name (which will be either "email" or "password")
       // and use it to target the key on our `state` object with the same name, using bracket syntax
-      this.setState({ [evt.target.name]: evt.target.value });
+      this.setState({ 
+        [evt.target.name]: evt.target.value });
+     
     }
     handleSubmit(evt){
         alert('success' + this.state.email );
@@ -30,13 +32,19 @@ class Form extends Component {
         <form onSubmit = {this.handleSubmit}>
         <h1>Login Form</h1>
           <label>Email</label>
-          <input type="text" name="email" onChange={this.handleChange} />
+          <input type="text" 
+          name="email" 
+          value = {this.state.email}
+          onChange={this.handleChange} />
           
           <label>Password</label>
-          <input type="password" name="password" onChange={this.handleChange} />
+          <input type="password" 
+          name="password" 
+          value = {this.state.password}
+          onChange={this.handleChange} />
           <input type="submit" value="Submit" />
         </form>
       );
     }
   }
-  export default Form;
+  export default Login;
