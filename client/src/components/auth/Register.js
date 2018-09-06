@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 
-
 class Register extends Component {
 
     constructor () {
@@ -17,6 +16,7 @@ class Register extends Component {
       this.handleSubmit = this.handleSubmit.bind(this);
     }
     
+  
     
     handleChange (evt) {
         console.log(evt.target.name); // the name of the form element
@@ -29,12 +29,14 @@ class Register extends Component {
     handleSubmit(evt){
        // alert('Go to Login Page' + this.state.name );
         evt.preventDefault();
+
         const newUser = {
           name: this.state.name,
           email: this.state.email,
           password: this.state.password,
           password2: this.state.password2
         };
+
         this.props.registerUser(newUser, this.props.history);
     
       }
